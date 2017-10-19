@@ -6,7 +6,8 @@ from settings import *
 from gpiozero import LED, Button
 from time import sleep
 from datetime import datetime
-#import requests
+from signal import pause
+import requests
 
 #Status LED on GPIO 17
 status = LED(17)
@@ -59,42 +60,50 @@ def log(b):
 
 #Just let's make sure connectivity is up
 def check_connect():
-	log("connection_test")
+	try:
+		r = requests.get("http://google.com")
+	except:
+		log("connection_test_failed")
+		status.on()
+		pause()
+
+	log("connection_test_positive")
 	good_status()
 
 
 if __name__ == "__main__":
-	boot_seq()
+	check_connect()
+
 	while True:
 		if b1.is_pressed:
-			print("b1")
+			#print("b1")
 			good_status()
-			#r = requests.get(BUTTON_1)
+			r = requests.get(BUTTON_1)
 			log(BUTTON_1)
 		if b2.is_pressed:
-			print("b2")
+			#print("b2")
 			good_status()
-			#r = requests.get(BUTTON_2)
+			r = requests.get(BUTTON_2)
 			log(BUTTON_2)
 		if b3.is_pressed:
-			print("b3")
+			#print("b3")
 			good_status()
-			#r = requests.get(BUTTON_3)
+			r = requests.get(BUTTON_3)
 			log(BUTTON_3)
 		if b4.is_pressed and not b6.is_pressed:
-			print("b4")
+			#print("b4")
 			good_status()
-			#r = requests.get(BUTTON_4)
+			r = requests.get(BUTTON_4)
 			log(BUTTON_4)
 		if b5.is_pressed:
-			print("b5")
+			#print("b5")
 			good_status()
-			#r = requests.get(BUTTON_5)
+			r = requests.get(BUTTON_5)
 			log(BUTTON_5)
 		if b6.is_pressed and not b4.is_pressed:
-			print("b6")
+			#print("b6")
 			good_status()
-			#r = requests.get(BUTTON_6)
+			r = requests.get(BUTTON_6)
 			log(BUTTON_6)
 		if b6.is_pressed and b4.is_pressed:
 			check_connect()

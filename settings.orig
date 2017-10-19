@@ -1,9 +1,9 @@
 
 #Change to localize
 
-BUTTON_1 = "http://someurl/1"
-BUTTON_2 = "http://someurl/2"
-BUTTON_3 = "http://someurl/3"
-BUTTON_4 = "http://someurl/4"
-BUTTON_5 = "http://someurl/5"
-BUTTON_6 = "http://someurl/6"
+BUTTON_1 = "http://google.com/1"
+BUTTON_2 = "http://google.com/2"
+BUTTON_3 = "http://google.com/3"
+BUTTON_4 = "http://google.com/4"
+BUTTON_5 = "http://google.com/5"
+BUTTON_6 = "http://google.com/6"
