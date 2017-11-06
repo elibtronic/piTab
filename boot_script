@@ -1,3 +1,4 @@
 #!/bin/bash
+sleep 5
 cd piTab
 sudo python3 piTab.py
