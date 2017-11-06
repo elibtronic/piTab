@@ -89,7 +89,7 @@ key_mgmt=WPA_EAP
 - A log of button presses is kept in `button_log.log`, this is useful for debugging
 - Two lights, one stays on to let you know that it is working, both blink on each button press
 - If the one light light shuts off, time to reboot/troubleshoot
-- You do not have to plug in a monitor/keyboard, once you configure it to run on startup you can <ronco>set it and forget it</ronco>
+- You do not have to plug in a monitor/keyboard, once you configure it to run on startup you can `<Ronco>`set it and forget it `</Ronco>`
 - `<EASTER EGG>`You can force a connection test, check the code to see if you can find out how `</EASTER EGG>`
 - Hopefully code is readable. Need help? Let me know
 
