@@ -1,6 +1,10 @@
 
 #Change to localize
 
+#Where you want to Log file of button presses to live
+PATH = "piTab"
+
+#What URLs should be triggered by button presses
 BUTTON_1 = "http://google.com/1"
 BUTTON_2 = "http://google.com/2"
 BUTTON_3 = "http://google.com/3"
