@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#Wifi Setup
-
 #Code and Python get ready
 cp settings.orig settings.py
 sudo apt-get install python3-gpiozero python3-requests
-
-
-#Script on bootup
