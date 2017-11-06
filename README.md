@@ -3,9 +3,11 @@
 
 # The RaspberryPi flavour of the Tabularon
 
+Written by: Tim Ribaric
+
 ![piTab 3.0](running_pi_tab.jpg)
 
-This is the 21st century version of an electronic tabulation device first appearing in [code4Lib](http://journal.code4lib.org/articles/8200) journal. Basically this device, once configured will send a value to a Google Spreadsheet that corresponds to one of the 6 buttons on the device. The handy picture above is how we have it configured. You essentially make HTTP GET commands against that form and it will populate. Details in that link.
+This is the 21st century version of an electronic tabulation device first appearing in [code4Lib](http://journal.code4lib.org/articles/8200) journal. Basically this device, once configured, will send a value to a Google Spreadsheet that corresponds to one of the 6 buttons on the device. The handy picture above is how we have it configured. You essentially make HTTP GET commands against that form and it will populate. Details in that link. So instead of tick sheets at your help desk, you can use this device to track.
 
 
 This version of the tabulatron is fully autonomous. Once you have the device connected and running it will communicate to the web directly (Used to be Arduino connected to a CPU... it was very fussy)
@@ -43,29 +45,36 @@ Hopefully the two images (one above and the one below) will give you the jist. T
 - It is possible to connect to an eduroam network with just the bare amount of fussing as follows:
 - `sudo nano /etc/network/interfaces`
 
-- add the following 5 lines
+- add the following 4 lines
 
-`auto wlan0`
-`allow-hotplug wlan0`
-`iface wlan0 inet dhcp`
-`wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf`
+```
+
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+```
 
 - Then you will need to edit the wpa supplicant file to localize
 - `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
 
 - add the following (use in  house directives as necessary)
 
-`country=CA`
-`ctrl_inter=DIR=/var/run/wpa_supplicant GROUP = netdev`
-`update_config=1`
-`network = {`
-`identity="user@school.edu"`
-`password="somepassword"`
-`eap=PEAP`
-`phase2="auth=MSVCAPV2"`
-`ssid=eduroam`
-`key_mgmt=WPA_EAP`
-`}`
+```
+country=CA
+ctrl_inter=DIR=/var/run/wpa_supplicant GROUP = netdev
+update_config=1
+
+network = {
+identity="user@school.edu"
+password="somepassword"
+eap=PEAP
+phase2="auth=MSVCAPV2"
+ssid=eduroam
+key_mgmt=WPA_EAP
+}
+```
 
 - You can add other `network` descriptions here as well
 - Once you reboot you should be able to get an IP
@@ -79,7 +88,9 @@ Hopefully the two images (one above and the one below) will give you the jist. T
 ## Misc
 - A log of button presses is kept in `button_log.log`, this is useful for debugging
 - Two lights, one stays on to let you know that it is working, both blink on each button press
-- If the one light light shuts off, time to reboot/slash troubleshoot
+- If the one light light shuts off, time to reboot/troubleshoot
 - You do not have to plug in a monitor/keyboard, once you configure it to run on startup you can <ronco>set it and forget it</ronco>
 - `<EASTER EGG>`You can force a connection test, check the code to see if you can find out how `</EASTER EGG>`
+- Hopefully code is readable. Need help? Let me know
 
+[@elibtronic](http://www.twitter.com/elibtronic)
