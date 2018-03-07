@@ -1,13 +1,23 @@
-
 #Change to localize
 
 #Where you want to Log file of button presses to live
 PATH = "piTab"
 
+#Google Form Key
+formkey = "dHdaS1NkdEtHY2Y5YkNjaDVfNGFpSkE6MQ"
+
+b1Text = "3D"
+b2Text = "VR"
+b3Text = "CNC"
+b4Text = "Workshop"
+b5Text = "Training"
+b6Text = "Other"
+
 #What URLs should be triggered by button presses
-BUTTON_1 = "http://google.com/1"
-BUTTON_2 = "http://google.com/2"
-BUTTON_3 = "http://google.com/3"
-BUTTON_4 = "http://google.com/4"
-BUTTON_5 = "http://google.com/5"
-BUTTON_6 = "http://google.com/6"
+#Details here http://journal.code4lib.org/articles/8200
+BUTTON_1 = "https://docs.google.com/spreadsheet/formResponse?formkey="+formkey+"&amp;ifq&entry.1.single="+b1Text
+BUTTON_2 = "https://docs.google.com/spreadsheet/formResponse?formkey="+formkey+"&amp;ifq&entry.1.single="+b2Text
+BUTTON_3 = "https://docs.google.com/spreadsheet/formResponse?formkey="+formkey+"&amp;ifq&entry.1.single="+b3Text
+BUTTON_4 = "https://docs.google.com/spreadsheet/formResponse?formkey="+formkey+"&amp;ifq&entry.1.single="+b4Text
+BUTTON_5 = "https://docs.google.com/spreadsheet/formResponse?formkey="+formkey+"&amp;ifq&entry.1.single="+b5Text
+BUTTON_6 = "https://docs.google.com/spreadsheet/formResponse?formkey="+formkey+"&amp;ifq&entry.1.single="+b6Text
